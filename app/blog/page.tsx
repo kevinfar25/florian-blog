@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { getPaginatedPosts } from '@/lib/posts';
+import Header from '@/components/Header';
 
 interface BlogPageProps {
   searchParams: Promise<{ page?: string }>;
@@ -12,13 +13,7 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
 
   return (
     <main>
-      <header className="header">
-        <div className="container">
-          <Link href="/">
-            <h1>Live Coaching Blog</h1>
-          </Link>
-        </div>
-      </header>
+      <Header />
 
       <div className="container">
         <section style={{ marginBottom: '3rem' }}>

@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { getPostWithHtml, getAllPostSlugs } from '@/lib/posts';
 import { notFound } from 'next/navigation';
+import Header from '@/components/Header';
 
 interface PostPageProps {
   params: Promise<{ slug: string }>;
@@ -19,13 +20,7 @@ export default async function PostPage({ params }: PostPageProps) {
 
     return (
       <main>
-        <header className="header">
-          <div className="container">
-            <Link href="/">
-              <h1>Live Coaching Blog</h1>
-            </Link>
-          </div>
-        </header>
+        <Header />
 
         <div className="container">
           <nav style={{ marginBottom: '2rem' }}>
